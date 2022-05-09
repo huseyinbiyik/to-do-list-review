@@ -1,5 +1,3 @@
-/* eslint-disable  import/no-cycle */
-import displayChanges from './displayChanges.js';
 import indexSetter from './indexSetter.js';
 
 export default function editTasks() {
@@ -23,7 +21,7 @@ export default function editTasks() {
       restoredData[element.target.getAttribute('data-index') - 1].content = element.target.value;
 
       localStorage.setItem('todolist', JSON.stringify(restoredData));
-      displayChanges();
+      indexSetter();
     });
   });
 
@@ -34,7 +32,6 @@ export default function editTasks() {
       const targetIndex = element.target.getAttribute('data-index') - 1;
       restoredData.splice(targetIndex, 1);
       localStorage.setItem('todolist', JSON.stringify(restoredData));
-      displayChanges();
       indexSetter();
     });
   });

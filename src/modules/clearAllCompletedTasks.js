@@ -1,5 +1,4 @@
 import indexSetter from './indexSetter.js';
-import displayChanges from './displayChanges.js';
 
 export default function clearAllCompletedTasks(e) {
   e.preventDefault();
@@ -12,5 +11,4 @@ export default function clearAllCompletedTasks(e) {
   });
   localStorage.setItem('todolist', JSON.stringify(restoredData));
   indexSetter();
-  displayChanges();
 }

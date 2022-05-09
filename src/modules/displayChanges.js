@@ -1,6 +1,5 @@
-/* eslint-disable  import/no-cycle */
 import inputChecker from './inputChecker.js';
-import edit from './editTasks.js';
+import editTasks from './editTasks.js';
 
 const listContainer = document.querySelector('#list-container');
 
@@ -27,5 +26,5 @@ export default function displayChanges() {
     </li>`;
   });
   inputChecker();
-  edit();
+  editTasks();
 }
