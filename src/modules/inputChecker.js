@@ -1,9 +1,9 @@
 export default function inputBoxChecker() {
-  const taskCheckBoxes = document.querySelectorAll(".to-do-input");
+  const taskCheckBoxes = document.querySelectorAll('.to-do-input');
 
   taskCheckBoxes.forEach((checkbox) => {
-    checkbox.addEventListener("click", (element) => {
-      const restoredData = JSON.parse(localStorage.getItem("todolist"));
+    checkbox.addEventListener('click', (element) => {
+      const restoredData = JSON.parse(localStorage.getItem('todolist'));
       const targetElement = element.target;
       const targetId = targetElement.id;
       if (targetElement.checked === true) {
@@ -11,7 +11,7 @@ export default function inputBoxChecker() {
       } else {
         restoredData[targetId - 1].complete = false;
       }
-      localStorage.setItem("todolist", JSON.stringify(restoredData));
+      localStorage.setItem('todolist', JSON.stringify(restoredData));
     });
   });
 }

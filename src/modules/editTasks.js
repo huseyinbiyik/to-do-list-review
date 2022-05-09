@@ -1,40 +1,39 @@
 /* eslint-disable  import/no-cycle */
-import displayChanges from "./displayChanges.js";
-import indexSetter from "./indexSetter.js";
+import displayChanges from './displayChanges.js';
+import indexSetter from './indexSetter.js';
 
 export default function editTasks() {
-  const taskInputList = document.querySelectorAll(".editable-input");
+  const taskInputList = document.querySelectorAll('.editable-input');
 
   taskInputList.forEach((input) => {
-    input.addEventListener("click", (event) => {
+    input.addEventListener('click', (event) => {
       const inputSelector = event.target;
-      const parentElement = inputSelector.parentElement;
-      parentElement.style.backgroundColor = "yellow";
+      const { parentElement } = inputSelector;
+      parentElement.style.backgroundColor = 'yellow';
     });
   });
 
   taskInputList.forEach((input) => {
-    input.addEventListener("focusout", (element) => {
-      const restoredData = JSON.parse(localStorage.getItem("todolist"));
+    input.addEventListener('focusout', (element) => {
+      const restoredData = JSON.parse(localStorage.getItem('todolist'));
       const inputSelector = element.target;
-      const parentElement = inputSelector.parentElement;
-      parentElement.style.backgroundColor = "transparent";
+      const { parentElement } = inputSelector;
+      parentElement.style.backgroundColor = 'transparent';
       parentElement.blur();
-      restoredData[element.target.getAttribute("data-index") - 1].content =
-        element.target.value;
+      restoredData[element.target.getAttribute('data-index') - 1].content = element.target.value;
 
-      localStorage.setItem("todolist", JSON.stringify(restoredData));
+      localStorage.setItem('todolist', JSON.stringify(restoredData));
       displayChanges();
     });
   });
 
-  const deleteButtons = document.querySelectorAll(".delete-icon");
+  const deleteButtons = document.querySelectorAll('.delete-icon');
   deleteButtons.forEach((button) => {
-    button.addEventListener("click", (element) => {
-      const restoredData = JSON.parse(localStorage.getItem("todolist"));
-      const targetIndex = element.target.getAttribute("data-index") - 1;
+    button.addEventListener('click', (element) => {
+      const restoredData = JSON.parse(localStorage.getItem('todolist'));
+      const targetIndex = element.target.getAttribute('data-index') - 1;
       restoredData.splice(targetIndex, 1);
-      localStorage.setItem("todolist", JSON.stringify(restoredData));
+      localStorage.setItem('todolist', JSON.stringify(restoredData));
       displayChanges();
       indexSetter();
     });
