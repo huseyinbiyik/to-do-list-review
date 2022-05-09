@@ -4,7 +4,7 @@ import edit from './edit.js';
 
 const listContainer = document.querySelector('#list-container');
 
-export default function display() {
+export default function displayChanges() {
   const restoredData = JSON.parse(localStorage.getItem('todolist'));
   let status = '';
   listContainer.innerHTML = '';

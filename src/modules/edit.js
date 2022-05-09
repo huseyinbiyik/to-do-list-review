@@ -1,5 +1,5 @@
 /* eslint-disable  import/no-cycle */
-import display from './display.js';
+import displayChanges from './displayChanges.js';
 import indexSetter from './indexSetter.js';
 
 export default function edit() {
@@ -23,7 +23,7 @@ export default function edit() {
       restoredData[el.target.getAttribute('data-index') - 1].content = el.target.value;
 
       localStorage.setItem('todolist', JSON.stringify(restoredData));
-      display();
+      displayChanges();
     });
   });
 
@@ -34,7 +34,7 @@ export default function edit() {
       const targetInd = e.target.getAttribute('data-index') - 1;
       restoredData.splice(targetInd, 1);
       localStorage.setItem('todolist', JSON.stringify(restoredData));
-      display();
+      displayChanges();
       indexSetter();
     });
   });

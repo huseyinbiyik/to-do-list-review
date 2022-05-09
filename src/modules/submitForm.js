@@ -1,6 +1,6 @@
 import AddItem from './addItem.js';
 import indexSetter from './indexSetter.js';
-import display from './display.js';
+import displayChanges from './displayChanges.js';
 
 const addTaskInput = document.querySelector('#add-task');
 const addNewForm = document.querySelector('#add-list-form');
@@ -14,6 +14,6 @@ export default function submitForm(e) {
   itemsArray.push(new AddItem(addTaskInput.value));
   localStorage.setItem('todolist', JSON.stringify(itemsArray));
   indexSetter();
-  display();
+  displayChanges();
   formReset();
 }
