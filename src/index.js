@@ -1,7 +1,7 @@
 import './style.css';
 import display from './modules/display.js';
 
-import clearAllCompleted from './modules/clearAllCompleted.js';
+import clearAllCompletedTasks from './modules/clearAllCompletedTasks.js';
 import submitForm from './modules/submitForm.js';
 
 const addNewForm = document.querySelector('#add-list-form');
@@ -16,7 +16,5 @@ display();
 // add new to do
 addNewForm.addEventListener('submit', submitForm);
 
-// form reset
-
 // clear all completed
-clearButton.addEventListener('click', clearAllCompleted);
+clearButton.addEventListener('click', clearAllCompletedTasks);
