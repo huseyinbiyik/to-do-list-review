@@ -1,6 +1,6 @@
 /* eslint-disable  import/no-cycle */
 import inputChecker from './inputChecker.js';
-import edit from './edit.js';
+import edit from './editTasks.js';
 
 const listContainer = document.querySelector('#list-container');
 

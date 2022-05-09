@@ -2,7 +2,7 @@
 import displayChanges from './displayChanges.js';
 import indexSetter from './indexSetter.js';
 
-export default function edit() {
+export default function editTasks() {
   const editForm = document.querySelectorAll('.editable-input');
 
   editForm.forEach((e) => {
