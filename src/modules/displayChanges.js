@@ -1,5 +1,5 @@
 import inputChecker from './inputChecker.js';
-import editTasks from './editTasks.js';
+import edit from './editTasks.js';
 
 const listContainer = document.querySelector('#list-container');
 
@@ -26,5 +26,5 @@ export default function displayChanges() {
     </li>`;
   });
   inputChecker();
-  editTasks();
+  edit();
 }

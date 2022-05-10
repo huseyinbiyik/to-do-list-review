@@ -21,7 +21,6 @@ export default function editTasks() {
       restoredData[element.target.getAttribute('data-index') - 1].content = element.target.value;
 
       localStorage.setItem('todolist', JSON.stringify(restoredData));
-      indexSetter();
     });
   });
 
@@ -33,6 +32,7 @@ export default function editTasks() {
       restoredData.splice(targetIndex, 1);
       localStorage.setItem('todolist', JSON.stringify(restoredData));
       indexSetter();
+      window.location.reload();
     });
   });
 }
